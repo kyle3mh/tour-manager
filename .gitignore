@@ -1,0 +1,13 @@
+# Shared
+node_modules/
+.env
+.env.local
+.env.*.local
+dist/
+*.log
+
+# Next.js
+.next/
+
+# Payload
+.payload/
