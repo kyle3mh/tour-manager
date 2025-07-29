@@ -1,0 +1,512 @@
+[
+  {
+    "name": "The Garage",
+    "city": "London",
+    "capacity": 600,
+    "address": "20-22 Highbury Corner, London N5 1RD",
+    "availableDates": [
+      {
+        "date": "2025-10-04"
+      },
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-10"
+      }
+    ]
+  },
+  {
+    "name": "Electric Brixton",
+    "city": "London",
+    "capacity": 1500,
+    "address": "Town Hall Parade, Brixton, London SW2 1RJ",
+    "availableDates": [
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-03"
+      },
+      {
+        "date": "2025-10-06"
+      }
+    ]
+  },
+  {
+    "name": "EartH",
+    "city": "London",
+    "capacity": 1200,
+    "address": "11-17 Stoke Newington Rd, London N16 8BH",
+    "availableDates": [
+      {
+        "date": "2025-10-08"
+      },
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-05"
+      }
+    ]
+  },
+  {
+    "name": "Scala",
+    "city": "London",
+    "capacity": 1100,
+    "address": "275 Pentonville Rd, London N1 9NL",
+    "availableDates": [
+      {
+        "date": "2025-10-08"
+      },
+      {
+        "date": "2025-10-09"
+      },
+      {
+        "date": "2025-10-07"
+      }
+    ]
+  },
+  {
+    "name": "Village Underground",
+    "city": "London",
+    "capacity": 700,
+    "address": "54 Holywell Ln, London EC2A 3PQ",
+    "availableDates": [
+      {
+        "date": "2025-10-06"
+      },
+      {
+        "date": "2025-10-07"
+      },
+      {
+        "date": "2025-10-03"
+      }
+    ]
+  },
+  {
+    "name": "KOKO",
+    "city": "London",
+    "capacity": 1410,
+    "address": "1A Camden High St, London NW1 7JE",
+    "availableDates": [
+      {
+        "date": "2025-10-03"
+      },
+      {
+        "date": "2025-10-05"
+      },
+      {
+        "date": "2025-10-01"
+      }
+    ]
+  },
+  {
+    "name": "Roundhouse",
+    "city": "London",
+    "capacity": 1700,
+    "address": "Chalk Farm Rd, London NW1 8EH",
+    "availableDates": [
+      {
+        "date": "2025-10-03"
+      },
+      {
+        "date": "2025-10-06"
+      },
+      {
+        "date": "2025-10-02"
+      }
+    ]
+  },
+  {
+    "name": "O2 Shepherd's Bush Empire",
+    "city": "London",
+    "capacity": 2000,
+    "address": "Shepherd's Bush Green, London W12 8TT",
+    "availableDates": [
+      {
+        "date": "2025-10-04"
+      },
+      {
+        "date": "2025-10-05"
+      },
+      {
+        "date": "2025-10-08"
+      }
+    ]
+  },
+  {
+    "name": "Islington Assembly Hall",
+    "city": "London",
+    "capacity": 800,
+    "address": "Upper St, London N1 2UD",
+    "availableDates": [
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-07"
+      },
+      {
+        "date": "2025-10-08"
+      }
+    ]
+  },
+  {
+    "name": "Troxy",
+    "city": "London",
+    "capacity": 3000,
+    "address": "490 Commercial Rd, London E1 0HX",
+    "availableDates": [
+      {
+        "date": "2025-10-10"
+      },
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-05"
+      }
+    ]
+  },
+  {
+    "name": "Gorilla",
+    "city": "Manchester",
+    "capacity": 700,
+    "address": "54-56 Whitworth St, Manchester M1 5WW",
+    "availableDates": [
+      {
+        "date": "2025-10-09"
+      },
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-08"
+      }
+    ]
+  },
+  {
+    "name": "The Ritz",
+    "city": "Manchester",
+    "capacity": 1500,
+    "address": "Whitworth St W, Manchester M1 5NQ",
+    "availableDates": [
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-06"
+      },
+      {
+        "date": "2025-10-04"
+      }
+    ]
+  },
+  {
+    "name": "Band on the Wall",
+    "city": "Manchester",
+    "capacity": 500,
+    "address": "25 Swan St, Manchester M4 5JZ",
+    "availableDates": [
+      {
+        "date": "2025-10-06"
+      },
+      {
+        "date": "2025-10-03"
+      },
+      {
+        "date": "2025-10-01"
+      }
+    ]
+  },
+  {
+    "name": "YES Manchester",
+    "city": "Manchester",
+    "capacity": 500,
+    "address": "38 Charles St, Manchester M1 7DB",
+    "availableDates": [
+      {
+        "date": "2025-10-08"
+      },
+      {
+        "date": "2025-10-07"
+      },
+      {
+        "date": "2025-10-06"
+      }
+    ]
+  },
+  {
+    "name": "Albert Hall",
+    "city": "Manchester",
+    "capacity": 1500,
+    "address": "27 Peter St, Manchester M2 5QR",
+    "availableDates": [
+      {
+        "date": "2025-10-10"
+      },
+      {
+        "date": "2025-10-06"
+      },
+      {
+        "date": "2025-10-02"
+      }
+    ]
+  },
+  {
+    "name": "SWG3",
+    "city": "Glasgow",
+    "capacity": 1250,
+    "address": "100 Eastvale Pl, Glasgow G3 8QG",
+    "availableDates": [
+      {
+        "date": "2025-10-09"
+      },
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-07"
+      }
+    ]
+  },
+  {
+    "name": "King Tut\u2019s Wah Wah Hut",
+    "city": "Glasgow",
+    "capacity": 300,
+    "address": "272a St Vincent St, Glasgow G2 5RL",
+    "availableDates": [
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-07"
+      }
+    ]
+  },
+  {
+    "name": "The Garage Glasgow",
+    "city": "Glasgow",
+    "capacity": 800,
+    "address": "490 Sauchiehall St, Glasgow G2 3LW",
+    "availableDates": [
+      {
+        "date": "2025-10-05"
+      },
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-07"
+      }
+    ]
+  },
+  {
+    "name": "St Luke\u2019s",
+    "city": "Glasgow",
+    "capacity": 600,
+    "address": "17 Bain St, Glasgow G40 2JZ",
+    "availableDates": [
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-10"
+      },
+      {
+        "date": "2025-10-09"
+      }
+    ]
+  },
+  {
+    "name": "Barrowland Ballroom",
+    "city": "Glasgow",
+    "capacity": 1900,
+    "address": "244 Gallowgate, Glasgow G4 0TT",
+    "availableDates": [
+      {
+        "date": "2025-10-05"
+      },
+      {
+        "date": "2025-10-04"
+      },
+      {
+        "date": "2025-10-03"
+      }
+    ]
+  },
+  {
+    "name": "Belgrave Music Hall",
+    "city": "Leeds",
+    "capacity": 400,
+    "address": "1-1A Cross Belgrave St, Leeds LS2 8JP",
+    "availableDates": [
+      {
+        "date": "2025-10-10"
+      },
+      {
+        "date": "2025-10-03"
+      },
+      {
+        "date": "2025-10-07"
+      }
+    ]
+  },
+  {
+    "name": "Brudenell Social Club",
+    "city": "Leeds",
+    "capacity": 400,
+    "address": "33 Queen's Rd, Leeds LS6 1NY",
+    "availableDates": [
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-06"
+      },
+      {
+        "date": "2025-10-03"
+      }
+    ]
+  },
+  {
+    "name": "The Wardrobe",
+    "city": "Leeds",
+    "capacity": 450,
+    "address": "6 St Peter's Square, Leeds LS9 8AH",
+    "availableDates": [
+      {
+        "date": "2025-10-09"
+      },
+      {
+        "date": "2025-10-07"
+      },
+      {
+        "date": "2025-10-01"
+      }
+    ]
+  },
+  {
+    "name": "O2 Academy Leeds",
+    "city": "Leeds",
+    "capacity": 2300,
+    "address": "55 Cookridge St, Leeds LS2 3AW",
+    "availableDates": [
+      {
+        "date": "2025-10-08"
+      },
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-10"
+      }
+    ]
+  },
+  {
+    "name": "Headrow House",
+    "city": "Leeds",
+    "capacity": 300,
+    "address": "19a The Headrow, Leeds LS1 6PU",
+    "availableDates": [
+      {
+        "date": "2025-10-10"
+      },
+      {
+        "date": "2025-10-05"
+      },
+      {
+        "date": "2025-10-02"
+      }
+    ]
+  },
+  {
+    "name": "The Fleece",
+    "city": "Bristol",
+    "capacity": 450,
+    "address": "12 St Thomas St, Bristol BS1 6JJ",
+    "availableDates": [
+      {
+        "date": "2025-10-04"
+      },
+      {
+        "date": "2025-10-07"
+      },
+      {
+        "date": "2025-10-10"
+      }
+    ]
+  },
+  {
+    "name": "SWX",
+    "city": "Bristol",
+    "capacity": 1000,
+    "address": "15 Nelson St, Bristol BS1 2JY",
+    "availableDates": [
+      {
+        "date": "2025-10-01"
+      },
+      {
+        "date": "2025-10-03"
+      },
+      {
+        "date": "2025-10-02"
+      }
+    ]
+  },
+  {
+    "name": "Thekla",
+    "city": "Bristol",
+    "capacity": 400,
+    "address": "The Grove, East Mud Dock, Bristol BS1 4RB",
+    "availableDates": [
+      {
+        "date": "2025-10-03"
+      },
+      {
+        "date": "2025-10-04"
+      },
+      {
+        "date": "2025-10-05"
+      }
+    ]
+  },
+  {
+    "name": "Motion",
+    "city": "Bristol",
+    "capacity": 2500,
+    "address": "74-78 Avon St, Bristol BS2 0PX",
+    "availableDates": [
+      {
+        "date": "2025-10-02"
+      },
+      {
+        "date": "2025-10-09"
+      },
+      {
+        "date": "2025-10-06"
+      }
+    ]
+  },
+  {
+    "name": "Trinity Centre",
+    "city": "Bristol",
+    "capacity": 600,
+    "address": "Trinity Rd, St Jude's, Bristol BS2 0NW",
+    "availableDates": [
+      {
+        "date": "2025-10-04"
+      },
+      {
+        "date": "2025-10-10"
+      },
+      {
+        "date": "2025-10-02"
+      }
+    ]
+  }
+]
