@@ -1,0 +1,13 @@
+query GetVenues {
+  Venues {
+    docs {
+      id
+      name
+      city
+      capacity
+      availableDates {
+        date
+      }
+    }
+  }
+}

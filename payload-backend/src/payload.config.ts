@@ -31,6 +31,7 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
+  cors: ['http://localhost:3001'],
   plugins: [
     payloadCloudPlugin(),
     // storage-adapter-placeholder

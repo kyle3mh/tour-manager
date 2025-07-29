@@ -1,6 +1,9 @@
 import { CollectionConfig } from 'payload'
 
 export const Venues: CollectionConfig = {
+  access: {
+    read: () => true, // Allow all users to read
+  },
   slug: 'venues',
   auth: false,
   admin: {

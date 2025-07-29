@@ -1,0 +1,9 @@
+fragment VenueFields on Venue {
+  id
+  name
+  city
+  capacity
+  availableDates {
+    date
+  }
+}
