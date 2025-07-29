@@ -8,9 +8,8 @@
 
 This project uses a `pnpm`-based monorepo for clean separation of backend and frontend:
 
-/tour-manager
-├── payload-backend # Payload CMS – auth, venues, tours, users
-├── frontend # Next.js 15 app – UI for artist managers
+payload-backend # Payload CMS – auth, venues, tours, users
+frontend # Next.js 15 app – UI for artist managers
 
 
 Managed with a [`pnpm-workspace.yaml`](./pnpm-workspace.yaml) file.
