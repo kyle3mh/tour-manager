@@ -4260,10 +4260,10 @@ export type GetVenuesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetVenuesQuery = { __typename?: 'Query', Venues?: { __typename?: 'Venues', docs: Array<{ __typename?: 'Venue', id: string, name: string, city: string, capacity?: number | null, availableDates?: Array<{ __typename?: 'Venue_AvailableDates', date?: any | null }> | null }> } | null };
 
-export type MeUserQueryQueryVariables = Exact<{ [key: string]: never; }>;
+export type MeUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeUserQueryQuery = { __typename?: 'Query', meUser?: { __typename?: 'usersMe', token?: string | null, strategy?: string | null, collection?: string | null, user?: { __typename?: 'User', id: string, email: any, role: User_Role, linkedVenue?: { __typename?: 'Venue', id: string, name: string } | null } | null } | null };
+export type MeUserQuery = { __typename?: 'Query', meUser?: { __typename?: 'usersMe', token?: string | null, strategy?: string | null, collection?: string | null, user?: { __typename?: 'User', id: string, email: any, role: User_Role, linkedVenue?: { __typename?: 'Venue', id: string, name: string } | null } | null } | null };
 
 export const VenueFieldsFragmentDoc = gql`
     fragment VenueFields on Venue {
@@ -4361,8 +4361,8 @@ export type GetVenuesQueryHookResult = ReturnType<typeof useGetVenuesQuery>;
 export type GetVenuesLazyQueryHookResult = ReturnType<typeof useGetVenuesLazyQuery>;
 export type GetVenuesSuspenseQueryHookResult = ReturnType<typeof useGetVenuesSuspenseQuery>;
 export type GetVenuesQueryResult = Apollo.QueryResult<GetVenuesQuery, GetVenuesQueryVariables>;
-export const MeUserQueryDocument = gql`
-    query MeUserQuery {
+export const MeUserDocument = gql`
+    query MeUser {
   meUser {
     user {
       id
@@ -4381,33 +4381,33 @@ export const MeUserQueryDocument = gql`
     `;
 
 /**
- * __useMeUserQueryQuery__
+ * __useMeUserQuery__
  *
- * To run a query within a React component, call `useMeUserQueryQuery` and pass it any options that fit your needs.
- * When your component renders, `useMeUserQueryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useMeUserQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMeUserQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useMeUserQueryQuery({
+ * const { data, loading, error } = useMeUserQuery({
  *   variables: {
  *   },
  * });
  */
-export function useMeUserQueryQuery(baseOptions?: Apollo.QueryHookOptions<MeUserQueryQuery, MeUserQueryQueryVariables>) {
+export function useMeUserQuery(baseOptions?: Apollo.QueryHookOptions<MeUserQuery, MeUserQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<MeUserQueryQuery, MeUserQueryQueryVariables>(MeUserQueryDocument, options);
+        return Apollo.useQuery<MeUserQuery, MeUserQueryVariables>(MeUserDocument, options);
       }
-export function useMeUserQueryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MeUserQueryQuery, MeUserQueryQueryVariables>) {
+export function useMeUserLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MeUserQuery, MeUserQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<MeUserQueryQuery, MeUserQueryQueryVariables>(MeUserQueryDocument, options);
+          return Apollo.useLazyQuery<MeUserQuery, MeUserQueryVariables>(MeUserDocument, options);
         }
-export function useMeUserQuerySuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<MeUserQueryQuery, MeUserQueryQueryVariables>) {
+export function useMeUserSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<MeUserQuery, MeUserQueryVariables>) {
           const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
-          return Apollo.useSuspenseQuery<MeUserQueryQuery, MeUserQueryQueryVariables>(MeUserQueryDocument, options);
+          return Apollo.useSuspenseQuery<MeUserQuery, MeUserQueryVariables>(MeUserDocument, options);
         }
-export type MeUserQueryQueryHookResult = ReturnType<typeof useMeUserQueryQuery>;
-export type MeUserQueryLazyQueryHookResult = ReturnType<typeof useMeUserQueryLazyQuery>;
-export type MeUserQuerySuspenseQueryHookResult = ReturnType<typeof useMeUserQuerySuspenseQuery>;
-export type MeUserQueryQueryResult = Apollo.QueryResult<MeUserQueryQuery, MeUserQueryQueryVariables>;
+export type MeUserQueryHookResult = ReturnType<typeof useMeUserQuery>;
+export type MeUserLazyQueryHookResult = ReturnType<typeof useMeUserLazyQuery>;
+export type MeUserSuspenseQueryHookResult = ReturnType<typeof useMeUserSuspenseQuery>;
+export type MeUserQueryResult = Apollo.QueryResult<MeUserQuery, MeUserQueryVariables>;
