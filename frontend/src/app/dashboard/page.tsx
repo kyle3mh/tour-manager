@@ -1,62 +1,75 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useMeUserQuery } from "@/graphql/generated/graphql";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  useMeAndVenueQuery,
+  useUpdateVenueMutation,
+} from "@/graphql/generated/graphql";
 
 export default function DashboardPage() {
-  const [hasMounted, setHasMounted] = useState(false);
-  const [token, setToken] = useState<string | null>(null);
-  const router = useRouter();
+  const { data, loading, error } = useMeAndVenueQuery();
+  const [updateVenue] = useUpdateVenueMutation();
+  const [dates, setDates] = useState<string[]>([]);
+  const [newDate, setNewDate] = useState("");
 
+  const venue = data?.meUser?.user?.linkedVenue;
+
+  // sync GraphQL data to local state
   useEffect(() => {
-    const t = localStorage.getItem("token");
-    if (!t) {
-      router.push("/login");
-    } else {
-      setToken(t);
-      setHasMounted(true);
+    if (venue?.bookedDates) {
+      setDates(venue.bookedDates.map((d) => d?.date ?? "").filter(Boolean));
     }
-  }, []);
+  }, [venue]);
 
-  const { data, loading, error } = useMeUserQuery({
-    skip: !hasMounted || !token,
-  });
-
-  if (!hasMounted) return null;
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error || !venue) return <p>Error loading venue.</p>;
 
-  const user = data?.meUser?.user;
+  const handleAddDate = () => {
+    if (newDate && !dates.includes(newDate)) {
+      setDates([...dates, newDate]);
+      setNewDate("");
+    }
+  };
+
+  const handleRemoveDate = (dateToRemove: string) => {
+    setDates(dates.filter((d) => d !== dateToRemove));
+  };
+
+  const handleSave = async () => {
+    await updateVenue({
+      variables: {
+        id: venue.id,
+        data: {
+          bookedDates: dates.map((date) => ({ date })),
+        },
+      },
+    });
+    alert("Saved!");
+  };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-      <p className="text-sm mb-4">Logged in as: {user?.email}</p>
+    <div>
+      <h2>{venue.name} — Booked Dates</h2>
 
-      {user?.role === "venue" && (
-        <div>
-          <h2 className="text-xl font-semibold">Venue Dashboard</h2>
-          <p>Venue: {user.linkedVenue?.name || "No venue linked yet"}</p>
-        </div>
-      )}
+      <ul>
+        {dates.map((date) => (
+          <li key={date}>
+            {date}{" "}
+            <button onClick={() => handleRemoveDate(date)}>Remove</button>
+          </li>
+        ))}
+      </ul>
 
-      {user?.role === "agent" && (
-        <div>
-          <h2 className="text-xl font-semibold">Agent Dashboard</h2>
-          <p>Artist tools coming soon...</p>
-        </div>
-      )}
+      <input
+        type="date"
+        value={newDate}
+        onChange={(e) => setNewDate(e.target.value)}
+      />
+      <button onClick={handleAddDate}>Add Date</button>
 
-      <button
-        className="mt-4 text-red-500 underline text-sm"
-        onClick={() => {
-          localStorage.removeItem("token");
-          router.push("/login");
-        }}
-      >
-        Log out
-      </button>
+      <br />
+      <br />
+      <button onClick={handleSave}>Save Changes</button>
     </div>
   );
 }

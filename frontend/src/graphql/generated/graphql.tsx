@@ -3186,7 +3186,7 @@ export type UsersUpdateDocAccess = {
 export type Venue = {
   __typename?: 'Venue';
   address?: Maybe<Scalars['String']['output']>;
-  availableDates?: Maybe<Array<Venue_AvailableDates>>;
+  bookedDates?: Maybe<Array<Venue_BookedDates>>;
   capacity?: Maybe<Scalars['Float']['output']>;
   city: Scalars['String']['output'];
   createdAt?: Maybe<Scalars['DateTime']['output']>;
@@ -3195,8 +3195,8 @@ export type Venue = {
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
-export type Venue_AvailableDates = {
-  __typename?: 'Venue_AvailableDates';
+export type Venue_BookedDates = {
+  __typename?: 'Venue_BookedDates';
   date?: Maybe<Scalars['DateTime']['output']>;
   id?: Maybe<Scalars['String']['output']>;
 };
@@ -3212,7 +3212,7 @@ export type Venue_Address_Operator = {
   not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type Venue_AvailableDates__Date_Operator = {
+export type Venue_BookedDates__Date_Operator = {
   equals?: InputMaybe<Scalars['DateTime']['input']>;
   greater_than?: InputMaybe<Scalars['DateTime']['input']>;
   greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
@@ -3222,7 +3222,7 @@ export type Venue_AvailableDates__Date_Operator = {
   not_equals?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-export type Venue_AvailableDates__Id_Operator = {
+export type Venue_BookedDates__Id_Operator = {
   all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
@@ -3300,8 +3300,8 @@ export type Venue_Where = {
   AND?: InputMaybe<Array<InputMaybe<Venue_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Venue_Where_Or>>>;
   address?: InputMaybe<Venue_Address_Operator>;
-  availableDates__date?: InputMaybe<Venue_AvailableDates__Date_Operator>;
-  availableDates__id?: InputMaybe<Venue_AvailableDates__Id_Operator>;
+  bookedDates__date?: InputMaybe<Venue_BookedDates__Date_Operator>;
+  bookedDates__id?: InputMaybe<Venue_BookedDates__Id_Operator>;
   capacity?: InputMaybe<Venue_Capacity_Operator>;
   city?: InputMaybe<Venue_City_Operator>;
   createdAt?: InputMaybe<Venue_CreatedAt_Operator>;
@@ -3314,8 +3314,8 @@ export type Venue_Where_And = {
   AND?: InputMaybe<Array<InputMaybe<Venue_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Venue_Where_Or>>>;
   address?: InputMaybe<Venue_Address_Operator>;
-  availableDates__date?: InputMaybe<Venue_AvailableDates__Date_Operator>;
-  availableDates__id?: InputMaybe<Venue_AvailableDates__Id_Operator>;
+  bookedDates__date?: InputMaybe<Venue_BookedDates__Date_Operator>;
+  bookedDates__id?: InputMaybe<Venue_BookedDates__Id_Operator>;
   capacity?: InputMaybe<Venue_Capacity_Operator>;
   city?: InputMaybe<Venue_City_Operator>;
   createdAt?: InputMaybe<Venue_CreatedAt_Operator>;
@@ -3328,8 +3328,8 @@ export type Venue_Where_Or = {
   AND?: InputMaybe<Array<InputMaybe<Venue_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<Venue_Where_Or>>>;
   address?: InputMaybe<Venue_Address_Operator>;
-  availableDates__date?: InputMaybe<Venue_AvailableDates__Date_Operator>;
-  availableDates__id?: InputMaybe<Venue_AvailableDates__Id_Operator>;
+  bookedDates__date?: InputMaybe<Venue_BookedDates__Date_Operator>;
+  bookedDates__id?: InputMaybe<Venue_BookedDates__Id_Operator>;
   capacity?: InputMaybe<Venue_Capacity_Operator>;
   city?: InputMaybe<Venue_City_Operator>;
   createdAt?: InputMaybe<Venue_CreatedAt_Operator>;
@@ -3380,7 +3380,7 @@ export type VenuesDeleteDocAccess = {
 export type VenuesDocAccessFields = {
   __typename?: 'VenuesDocAccessFields';
   address?: Maybe<VenuesDocAccessFields_Address>;
-  availableDates?: Maybe<VenuesDocAccessFields_AvailableDates>;
+  bookedDates?: Maybe<VenuesDocAccessFields_BookedDates>;
   capacity?: Maybe<VenuesDocAccessFields_Capacity>;
   city?: Maybe<VenuesDocAccessFields_City>;
   createdAt?: Maybe<VenuesDocAccessFields_CreatedAt>;
@@ -3416,94 +3416,94 @@ export type VenuesDocAccessFields_Address_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates = {
-  __typename?: 'VenuesDocAccessFields_availableDates';
-  create?: Maybe<VenuesDocAccessFields_AvailableDates_Create>;
-  delete?: Maybe<VenuesDocAccessFields_AvailableDates_Delete>;
-  fields?: Maybe<VenuesDocAccessFields_AvailableDates_Fields>;
-  read?: Maybe<VenuesDocAccessFields_AvailableDates_Read>;
-  update?: Maybe<VenuesDocAccessFields_AvailableDates_Update>;
+export type VenuesDocAccessFields_BookedDates = {
+  __typename?: 'VenuesDocAccessFields_bookedDates';
+  create?: Maybe<VenuesDocAccessFields_BookedDates_Create>;
+  delete?: Maybe<VenuesDocAccessFields_BookedDates_Delete>;
+  fields?: Maybe<VenuesDocAccessFields_BookedDates_Fields>;
+  read?: Maybe<VenuesDocAccessFields_BookedDates_Read>;
+  update?: Maybe<VenuesDocAccessFields_BookedDates_Update>;
 };
 
-export type VenuesDocAccessFields_AvailableDates_Create = {
-  __typename?: 'VenuesDocAccessFields_availableDates_Create';
+export type VenuesDocAccessFields_BookedDates_Create = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_Create';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Delete = {
-  __typename?: 'VenuesDocAccessFields_availableDates_Delete';
+export type VenuesDocAccessFields_BookedDates_Delete = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_Delete';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Fields = {
-  __typename?: 'VenuesDocAccessFields_availableDates_Fields';
-  date?: Maybe<VenuesDocAccessFields_AvailableDates_Date>;
-  id?: Maybe<VenuesDocAccessFields_AvailableDates_Id>;
+export type VenuesDocAccessFields_BookedDates_Fields = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_Fields';
+  date?: Maybe<VenuesDocAccessFields_BookedDates_Date>;
+  id?: Maybe<VenuesDocAccessFields_BookedDates_Id>;
 };
 
-export type VenuesDocAccessFields_AvailableDates_Read = {
-  __typename?: 'VenuesDocAccessFields_availableDates_Read';
+export type VenuesDocAccessFields_BookedDates_Read = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_Read';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Update = {
-  __typename?: 'VenuesDocAccessFields_availableDates_Update';
+export type VenuesDocAccessFields_BookedDates_Update = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_Update';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Date = {
-  __typename?: 'VenuesDocAccessFields_availableDates_date';
-  create?: Maybe<VenuesDocAccessFields_AvailableDates_Date_Create>;
-  delete?: Maybe<VenuesDocAccessFields_AvailableDates_Date_Delete>;
-  read?: Maybe<VenuesDocAccessFields_AvailableDates_Date_Read>;
-  update?: Maybe<VenuesDocAccessFields_AvailableDates_Date_Update>;
+export type VenuesDocAccessFields_BookedDates_Date = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_date';
+  create?: Maybe<VenuesDocAccessFields_BookedDates_Date_Create>;
+  delete?: Maybe<VenuesDocAccessFields_BookedDates_Date_Delete>;
+  read?: Maybe<VenuesDocAccessFields_BookedDates_Date_Read>;
+  update?: Maybe<VenuesDocAccessFields_BookedDates_Date_Update>;
 };
 
-export type VenuesDocAccessFields_AvailableDates_Date_Create = {
-  __typename?: 'VenuesDocAccessFields_availableDates_date_Create';
+export type VenuesDocAccessFields_BookedDates_Date_Create = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_date_Create';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Date_Delete = {
-  __typename?: 'VenuesDocAccessFields_availableDates_date_Delete';
+export type VenuesDocAccessFields_BookedDates_Date_Delete = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_date_Delete';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Date_Read = {
-  __typename?: 'VenuesDocAccessFields_availableDates_date_Read';
+export type VenuesDocAccessFields_BookedDates_Date_Read = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_date_Read';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Date_Update = {
-  __typename?: 'VenuesDocAccessFields_availableDates_date_Update';
+export type VenuesDocAccessFields_BookedDates_Date_Update = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_date_Update';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Id = {
-  __typename?: 'VenuesDocAccessFields_availableDates_id';
-  create?: Maybe<VenuesDocAccessFields_AvailableDates_Id_Create>;
-  delete?: Maybe<VenuesDocAccessFields_AvailableDates_Id_Delete>;
-  read?: Maybe<VenuesDocAccessFields_AvailableDates_Id_Read>;
-  update?: Maybe<VenuesDocAccessFields_AvailableDates_Id_Update>;
+export type VenuesDocAccessFields_BookedDates_Id = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_id';
+  create?: Maybe<VenuesDocAccessFields_BookedDates_Id_Create>;
+  delete?: Maybe<VenuesDocAccessFields_BookedDates_Id_Delete>;
+  read?: Maybe<VenuesDocAccessFields_BookedDates_Id_Read>;
+  update?: Maybe<VenuesDocAccessFields_BookedDates_Id_Update>;
 };
 
-export type VenuesDocAccessFields_AvailableDates_Id_Create = {
-  __typename?: 'VenuesDocAccessFields_availableDates_id_Create';
+export type VenuesDocAccessFields_BookedDates_Id_Create = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_id_Create';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Id_Delete = {
-  __typename?: 'VenuesDocAccessFields_availableDates_id_Delete';
+export type VenuesDocAccessFields_BookedDates_Id_Delete = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_id_Delete';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Id_Read = {
-  __typename?: 'VenuesDocAccessFields_availableDates_id_Read';
+export type VenuesDocAccessFields_BookedDates_Id_Read = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_id_Read';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesDocAccessFields_AvailableDates_Id_Update = {
-  __typename?: 'VenuesDocAccessFields_availableDates_id_Update';
+export type VenuesDocAccessFields_BookedDates_Id_Update = {
+  __typename?: 'VenuesDocAccessFields_bookedDates_id_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -3650,7 +3650,7 @@ export type VenuesDocAccessFields_UpdatedAt_Update = {
 export type VenuesFields = {
   __typename?: 'VenuesFields';
   address?: Maybe<VenuesFields_Address>;
-  availableDates?: Maybe<VenuesFields_AvailableDates>;
+  bookedDates?: Maybe<VenuesFields_BookedDates>;
   capacity?: Maybe<VenuesFields_Capacity>;
   city?: Maybe<VenuesFields_City>;
   createdAt?: Maybe<VenuesFields_CreatedAt>;
@@ -3686,94 +3686,94 @@ export type VenuesFields_Address_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates = {
-  __typename?: 'VenuesFields_availableDates';
-  create?: Maybe<VenuesFields_AvailableDates_Create>;
-  delete?: Maybe<VenuesFields_AvailableDates_Delete>;
-  fields?: Maybe<VenuesFields_AvailableDates_Fields>;
-  read?: Maybe<VenuesFields_AvailableDates_Read>;
-  update?: Maybe<VenuesFields_AvailableDates_Update>;
+export type VenuesFields_BookedDates = {
+  __typename?: 'VenuesFields_bookedDates';
+  create?: Maybe<VenuesFields_BookedDates_Create>;
+  delete?: Maybe<VenuesFields_BookedDates_Delete>;
+  fields?: Maybe<VenuesFields_BookedDates_Fields>;
+  read?: Maybe<VenuesFields_BookedDates_Read>;
+  update?: Maybe<VenuesFields_BookedDates_Update>;
 };
 
-export type VenuesFields_AvailableDates_Create = {
-  __typename?: 'VenuesFields_availableDates_Create';
+export type VenuesFields_BookedDates_Create = {
+  __typename?: 'VenuesFields_bookedDates_Create';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Delete = {
-  __typename?: 'VenuesFields_availableDates_Delete';
+export type VenuesFields_BookedDates_Delete = {
+  __typename?: 'VenuesFields_bookedDates_Delete';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Fields = {
-  __typename?: 'VenuesFields_availableDates_Fields';
-  date?: Maybe<VenuesFields_AvailableDates_Date>;
-  id?: Maybe<VenuesFields_AvailableDates_Id>;
+export type VenuesFields_BookedDates_Fields = {
+  __typename?: 'VenuesFields_bookedDates_Fields';
+  date?: Maybe<VenuesFields_BookedDates_Date>;
+  id?: Maybe<VenuesFields_BookedDates_Id>;
 };
 
-export type VenuesFields_AvailableDates_Read = {
-  __typename?: 'VenuesFields_availableDates_Read';
+export type VenuesFields_BookedDates_Read = {
+  __typename?: 'VenuesFields_bookedDates_Read';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Update = {
-  __typename?: 'VenuesFields_availableDates_Update';
+export type VenuesFields_BookedDates_Update = {
+  __typename?: 'VenuesFields_bookedDates_Update';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Date = {
-  __typename?: 'VenuesFields_availableDates_date';
-  create?: Maybe<VenuesFields_AvailableDates_Date_Create>;
-  delete?: Maybe<VenuesFields_AvailableDates_Date_Delete>;
-  read?: Maybe<VenuesFields_AvailableDates_Date_Read>;
-  update?: Maybe<VenuesFields_AvailableDates_Date_Update>;
+export type VenuesFields_BookedDates_Date = {
+  __typename?: 'VenuesFields_bookedDates_date';
+  create?: Maybe<VenuesFields_BookedDates_Date_Create>;
+  delete?: Maybe<VenuesFields_BookedDates_Date_Delete>;
+  read?: Maybe<VenuesFields_BookedDates_Date_Read>;
+  update?: Maybe<VenuesFields_BookedDates_Date_Update>;
 };
 
-export type VenuesFields_AvailableDates_Date_Create = {
-  __typename?: 'VenuesFields_availableDates_date_Create';
+export type VenuesFields_BookedDates_Date_Create = {
+  __typename?: 'VenuesFields_bookedDates_date_Create';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Date_Delete = {
-  __typename?: 'VenuesFields_availableDates_date_Delete';
+export type VenuesFields_BookedDates_Date_Delete = {
+  __typename?: 'VenuesFields_bookedDates_date_Delete';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Date_Read = {
-  __typename?: 'VenuesFields_availableDates_date_Read';
+export type VenuesFields_BookedDates_Date_Read = {
+  __typename?: 'VenuesFields_bookedDates_date_Read';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Date_Update = {
-  __typename?: 'VenuesFields_availableDates_date_Update';
+export type VenuesFields_BookedDates_Date_Update = {
+  __typename?: 'VenuesFields_bookedDates_date_Update';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Id = {
-  __typename?: 'VenuesFields_availableDates_id';
-  create?: Maybe<VenuesFields_AvailableDates_Id_Create>;
-  delete?: Maybe<VenuesFields_AvailableDates_Id_Delete>;
-  read?: Maybe<VenuesFields_AvailableDates_Id_Read>;
-  update?: Maybe<VenuesFields_AvailableDates_Id_Update>;
+export type VenuesFields_BookedDates_Id = {
+  __typename?: 'VenuesFields_bookedDates_id';
+  create?: Maybe<VenuesFields_BookedDates_Id_Create>;
+  delete?: Maybe<VenuesFields_BookedDates_Id_Delete>;
+  read?: Maybe<VenuesFields_BookedDates_Id_Read>;
+  update?: Maybe<VenuesFields_BookedDates_Id_Update>;
 };
 
-export type VenuesFields_AvailableDates_Id_Create = {
-  __typename?: 'VenuesFields_availableDates_id_Create';
+export type VenuesFields_BookedDates_Id_Create = {
+  __typename?: 'VenuesFields_bookedDates_id_Create';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Id_Delete = {
-  __typename?: 'VenuesFields_availableDates_id_Delete';
+export type VenuesFields_BookedDates_Id_Delete = {
+  __typename?: 'VenuesFields_bookedDates_id_Delete';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Id_Read = {
-  __typename?: 'VenuesFields_availableDates_id_Read';
+export type VenuesFields_BookedDates_Id_Read = {
+  __typename?: 'VenuesFields_bookedDates_id_Read';
   permission: Scalars['Boolean']['output'];
 };
 
-export type VenuesFields_AvailableDates_Id_Update = {
-  __typename?: 'VenuesFields_availableDates_id_Update';
+export type VenuesFields_BookedDates_Id_Update = {
+  __typename?: 'VenuesFields_bookedDates_id_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -4107,7 +4107,7 @@ export type MutationUser_SessionsInput = {
 
 export type MutationVenueInput = {
   address?: InputMaybe<Scalars['String']['input']>;
-  availableDates?: InputMaybe<Array<InputMaybe<MutationVenue_AvailableDatesInput>>>;
+  bookedDates?: InputMaybe<Array<InputMaybe<MutationVenue_BookedDatesInput>>>;
   capacity?: InputMaybe<Scalars['Float']['input']>;
   city: Scalars['String']['input'];
   createdAt?: InputMaybe<Scalars['String']['input']>;
@@ -4117,7 +4117,7 @@ export type MutationVenueInput = {
 
 export type MutationVenueUpdateInput = {
   address?: InputMaybe<Scalars['String']['input']>;
-  availableDates?: InputMaybe<Array<InputMaybe<MutationVenueUpdate_AvailableDatesInput>>>;
+  bookedDates?: InputMaybe<Array<InputMaybe<MutationVenueUpdate_BookedDatesInput>>>;
   capacity?: InputMaybe<Scalars['Float']['input']>;
   city?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
@@ -4125,12 +4125,12 @@ export type MutationVenueUpdateInput = {
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MutationVenueUpdate_AvailableDatesInput = {
+export type MutationVenueUpdate_BookedDatesInput = {
   date: Scalars['String']['input'];
   id?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MutationVenue_AvailableDatesInput = {
+export type MutationVenue_BookedDatesInput = {
   date: Scalars['String']['input'];
   id?: InputMaybe<Scalars['String']['input']>;
 };
@@ -4245,7 +4245,7 @@ export type VenuesDocAccess = {
   update?: Maybe<VenuesUpdateDocAccess>;
 };
 
-export type VenueFieldsFragment = { __typename?: 'Venue', id: string, name: string, city: string, capacity?: number | null, availableDates?: Array<{ __typename?: 'Venue_AvailableDates', date?: any | null }> | null };
+export type VenueFieldsFragment = { __typename?: 'Venue', id: string, name: string, city: string, capacity?: number | null, bookedDates?: Array<{ __typename?: 'Venue_BookedDates', date?: any | null }> | null };
 
 export type LoginMutationVariables = Exact<{
   email: Scalars['String']['input'];
@@ -4255,10 +4255,23 @@ export type LoginMutationVariables = Exact<{
 
 export type LoginMutation = { __typename?: 'Mutation', loginUser?: { __typename?: 'usersLoginResult', token?: string | null, user?: { __typename?: 'User', id: string, email: any } | null } | null };
 
+export type UpdateVenueMutationVariables = Exact<{
+  id: Scalars['String']['input'];
+  data: MutationVenueUpdateInput;
+}>;
+
+
+export type UpdateVenueMutation = { __typename?: 'Mutation', updateVenue?: { __typename?: 'Venue', id: string, bookedDates?: Array<{ __typename?: 'Venue_BookedDates', date?: any | null }> | null } | null };
+
+export type MeAndVenueQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MeAndVenueQuery = { __typename?: 'Query', meUser?: { __typename?: 'usersMe', user?: { __typename?: 'User', id: string, email: any, linkedVenue?: { __typename?: 'Venue', id: string, name: string, bookedDates?: Array<{ __typename?: 'Venue_BookedDates', date?: any | null }> | null } | null } | null } | null };
+
 export type GetVenuesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetVenuesQuery = { __typename?: 'Query', Venues?: { __typename?: 'Venues', docs: Array<{ __typename?: 'Venue', id: string, name: string, city: string, capacity?: number | null, availableDates?: Array<{ __typename?: 'Venue_AvailableDates', date?: any | null }> | null }> } | null };
+export type GetVenuesQuery = { __typename?: 'Query', Venues?: { __typename?: 'Venues', docs: Array<{ __typename?: 'Venue', id: string, name: string, city: string, capacity?: number | null, bookedDates?: Array<{ __typename?: 'Venue_BookedDates', date?: any | null }> | null }> } | null };
 
 export type MeUserQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4271,7 +4284,7 @@ export const VenueFieldsFragmentDoc = gql`
   name
   city
   capacity
-  availableDates {
+  bookedDates {
     date
   }
 }
@@ -4314,6 +4327,92 @@ export function useLoginMutation(baseOptions?: Apollo.MutationHookOptions<LoginM
 export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>;
 export type LoginMutationResult = Apollo.MutationResult<LoginMutation>;
 export type LoginMutationOptions = Apollo.BaseMutationOptions<LoginMutation, LoginMutationVariables>;
+export const UpdateVenueDocument = gql`
+    mutation UpdateVenue($id: String!, $data: mutationVenueUpdateInput!) {
+  updateVenue(id: $id, data: $data) {
+    id
+    bookedDates {
+      date
+    }
+  }
+}
+    `;
+export type UpdateVenueMutationFn = Apollo.MutationFunction<UpdateVenueMutation, UpdateVenueMutationVariables>;
+
+/**
+ * __useUpdateVenueMutation__
+ *
+ * To run a mutation, you first call `useUpdateVenueMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateVenueMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateVenueMutation, { data, loading, error }] = useUpdateVenueMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useUpdateVenueMutation(baseOptions?: Apollo.MutationHookOptions<UpdateVenueMutation, UpdateVenueMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<UpdateVenueMutation, UpdateVenueMutationVariables>(UpdateVenueDocument, options);
+      }
+export type UpdateVenueMutationHookResult = ReturnType<typeof useUpdateVenueMutation>;
+export type UpdateVenueMutationResult = Apollo.MutationResult<UpdateVenueMutation>;
+export type UpdateVenueMutationOptions = Apollo.BaseMutationOptions<UpdateVenueMutation, UpdateVenueMutationVariables>;
+export const MeAndVenueDocument = gql`
+    query MeAndVenue {
+  meUser {
+    user {
+      id
+      email
+      linkedVenue {
+        id
+        name
+        bookedDates {
+          date
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useMeAndVenueQuery__
+ *
+ * To run a query within a React component, call `useMeAndVenueQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMeAndVenueQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMeAndVenueQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useMeAndVenueQuery(baseOptions?: Apollo.QueryHookOptions<MeAndVenueQuery, MeAndVenueQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<MeAndVenueQuery, MeAndVenueQueryVariables>(MeAndVenueDocument, options);
+      }
+export function useMeAndVenueLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MeAndVenueQuery, MeAndVenueQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<MeAndVenueQuery, MeAndVenueQueryVariables>(MeAndVenueDocument, options);
+        }
+export function useMeAndVenueSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<MeAndVenueQuery, MeAndVenueQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<MeAndVenueQuery, MeAndVenueQueryVariables>(MeAndVenueDocument, options);
+        }
+export type MeAndVenueQueryHookResult = ReturnType<typeof useMeAndVenueQuery>;
+export type MeAndVenueLazyQueryHookResult = ReturnType<typeof useMeAndVenueLazyQuery>;
+export type MeAndVenueSuspenseQueryHookResult = ReturnType<typeof useMeAndVenueSuspenseQuery>;
+export type MeAndVenueQueryResult = Apollo.QueryResult<MeAndVenueQuery, MeAndVenueQueryVariables>;
 export const GetVenuesDocument = gql`
     query GetVenues {
   Venues {
@@ -4322,7 +4421,7 @@ export const GetVenuesDocument = gql`
       name
       city
       capacity
-      availableDates {
+      bookedDates {
         date
       }
     }

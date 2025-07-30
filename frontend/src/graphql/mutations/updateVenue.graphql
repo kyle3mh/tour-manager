@@ -1,0 +1,8 @@
+mutation UpdateVenue($id: String!, $data: mutationVenueUpdateInput!) {
+  updateVenue(id: $id, data: $data) {
+    id
+    bookedDates {
+      date
+    }
+  }
+}

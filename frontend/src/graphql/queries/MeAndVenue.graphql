@@ -1,0 +1,15 @@
+query MeAndVenue {
+  meUser {
+    user {
+      id
+      email
+      linkedVenue {
+        id
+        name
+        bookedDates {
+          date
+        }
+      }
+    }
+  }
+}

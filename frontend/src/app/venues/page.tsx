@@ -21,7 +21,7 @@ export default function VenuesPage() {
             <div>
               <strong>Available Dates:</strong>
               <ul>
-                {venue.availableDates?.map((date, i) => (
+                {venue.bookedDates?.map((date, i) => (
                   <li key={i}>
                     {new Date(date?.date || "").toLocaleDateString()}
                   </li>

@@ -3,7 +3,7 @@ fragment VenueFields on Venue {
   name
   city
   capacity
-  availableDates {
+  bookedDates {
     date
   }
 }

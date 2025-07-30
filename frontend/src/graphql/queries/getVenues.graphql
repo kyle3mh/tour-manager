@@ -5,7 +5,7 @@ query GetVenues {
       name
       city
       capacity
-      availableDates {
+      bookedDates {
         date
       }
     }
