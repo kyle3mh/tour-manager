@@ -21,6 +21,9 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+  graphQL: {
+    disable: false,
+  },
   collections: [Users, Venues, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
