@@ -1,0 +1,16 @@
+query MeUserQuery {
+  meUser {
+    user {
+      id
+      email
+      role
+      linkedVenue {
+        id
+        name
+      }
+    }
+    token
+    strategy
+    collection
+  }
+}

@@ -1,64 +1,97 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const router = useRouter();
+  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
+  useEffect(() => {
+    const existingToken = localStorage.getItem("token");
+    if (existingToken) {
+      setToken(existingToken);
+      fetchMe(existingToken);
+    }
+  }, []);
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_PAYLOAD_API}/api/users/login`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include", // important for cookie-based auth
-        body: JSON.stringify({ email, password }),
-      }
-    );
+  const handleLogin = async () => {
+    setError(null);
+    const res = await fetch("http://localhost:3000/api/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
 
-    if (res.ok) {
-      router.push("/dashboard");
-    } else {
-      const data = await res.json();
-      setError(data?.message || "Login failed");
+    if (!res.ok) {
+      setError("Login failed");
+      return;
+    }
+
+    const data = await res.json();
+    const token = data.token;
+    if (token) {
+      localStorage.setItem("token", token);
+      setToken(token);
+      fetchMe(token);
     }
   };
 
+const fetchMe = async (jwt: string) => {
+  const res = await fetch("http://localhost:3000/api/users/me", {
+    headers: {
+      Authorization: `JWT ${jwt}`,
+    },
+  });
+
+  const data = await res.json();
+  console.log("me data", data);
+  if (res.ok) {
+    setUser(data.user);
+  } else {
+    setUser(null);
+    console.error("Error fetching /me", res.status);
+  }
+};
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+    setUser(null);
+  };
+
+  if (token && user) {
+    return (
+      <div>
+        <p>Logged in as: {user.email}</p>
+        <button onClick={handleLogout}>Log out</button>
+      </div>
+    );
+  }
+
   return (
-    <div className="p-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Login</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full border p-2 rounded"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full border p-2 rounded"
-          required
-        />
-        {error && <p className="text-red-600">{error}</p>}
-        <button
-          type="submit"
-          className="w-full bg-black text-white p-2 rounded"
-        >
-          Log In
-        </button>
-      </form>
+    <div>
+      <h2>Login</h2>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <br />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <br />
+      <button onClick={handleLogin}>Login</button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
