@@ -32,9 +32,9 @@ export const Venues: CollectionConfig = {
       required: false,
     },
     {
-      name: 'availableDates',
+      name: 'bookedDates',
       type: 'array',
-      label: 'Available Dates',
+      label: 'Booked Dates',
       fields: [
         {
           name: 'date',
@@ -42,6 +42,9 @@ export const Venues: CollectionConfig = {
           required: true,
         },
       ],
+      admin: {
+        description: 'Dates that are already booked for this venue',
+      },
     },
   ],
 }

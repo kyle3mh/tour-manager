@@ -151,7 +151,10 @@ export interface Venue {
   city: string;
   capacity?: number | null;
   address?: string | null;
-  availableDates?:
+  /**
+   * Dates that are already booked for this venue
+   */
+  bookedDates?:
     | {
         date: string;
         id?: string | null;
@@ -273,7 +276,7 @@ export interface VenuesSelect<T extends boolean = true> {
   city?: T;
   capacity?: T;
   address?: T;
-  availableDates?:
+  bookedDates?:
     | T
     | {
         date?: T;
