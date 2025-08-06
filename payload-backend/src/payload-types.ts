@@ -121,7 +121,7 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: string;
-  role: 'admin' | 'agent' | 'venue';
+  role: 'agent' | 'venue';
   linkedVenue?: (string | null) | Venue;
   updatedAt: string;
   createdAt: string;

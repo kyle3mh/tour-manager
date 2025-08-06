@@ -1,0 +1,9 @@
+query Me {
+  meUser {
+    user {
+      id
+      email
+      role
+    }
+  }
+}
